@@ -1,0 +1,15 @@
+﻿<Window x:Class="OxyPlotTest.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="350" Width="525" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <oxy:Plot Title="曲线">
+            <oxy:Plot.Series>
+                <oxy:LineSeries ItemsSource="{Binding LeftPoints}"/>
+            </oxy:Plot.Series>
+        </oxy:Plot>
+    </Grid>
+</Window>
