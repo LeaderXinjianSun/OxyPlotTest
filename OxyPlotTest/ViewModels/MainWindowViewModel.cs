@@ -1,7 +1,11 @@
 ﻿using OxyPlot;
+using OxyPlot.Axes;
+using OxyPlot.Series;
 using Prism.Mvvm;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace OxyPlotTest.ViewModels
 {
@@ -13,23 +17,31 @@ namespace OxyPlotTest.ViewModels
             get { return _title; }
             set { SetProperty(ref _title, value); }
         }
-        private IList<DataPoint> leftPoints;
-
-        public IList<DataPoint> LeftPoints
+        private PlotModel plotModel1 = new PlotModel { Title = "曲线" };
+        public PlotModel PlotModel1
         {
-            get { return leftPoints; }
-            set
-            {
-                leftPoints = value;
-                this.RaisePropertyChanged("LeftPoints");
-            }
+            get { return plotModel1; }
+            set { SetProperty(ref plotModel1, value); }
         }
         public MainWindowViewModel()
         {
-            LeftPoints = new ObservableCollection<DataPoint>();
-            for (int i = 0; i < 1000; i++)
+            PlotModel1.Series.Add(new LineSeries { LineStyle = LineStyle.Solid});
+            Run();
+        }
+        public async void Run()
+        {
+            int i = 0;
+            Random rdy = new Random();
+            while (true)
             {
-                LeftPoints.Add(new DataPoint(i, i * i));
+                var s = (LineSeries)PlotModel1.Series[0];
+                if (s.Points.Count >= 100)
+                {
+                    s.Points.RemoveAt(0);
+                }
+                s.Points.Add(new DataPoint(i++, rdy.Next(100)));
+                PlotModel1.InvalidatePlot(true);
+                await Task.Delay(100);
             }
         }
     }

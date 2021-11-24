@@ -7,11 +7,11 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="768" Width="1024" WindowStartupLocation="CenterScreen">
     <Grid>
-        <oxy:Plot Grid.Column="1" Title="曲线">
+        <!--<oxy:Plot Title="曲线">
             <oxy:Plot.Series>
                 <oxy:LineSeries ItemsSource="{Binding LeftPoints}"/>
             </oxy:Plot.Series>
-        </oxy:Plot>
-
+        </oxy:Plot>-->
+        <oxy:PlotView Model="{Binding PlotModel1}"></oxy:PlotView>
     </Grid>
 </hc:Window>
