@@ -25,9 +25,9 @@ namespace OxyPlotTest.ViewModels
         }
         public MainWindowViewModel()
         {
-            PlotModel1.Series.Add(new LineSeries { LineStyle = LineStyle.Solid});
-            PlotModel1.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom,IsZoomEnabled = false });
-            PlotModel1.Axes.Add(new LinearAxis { Position = AxisPosition.Left, IsZoomEnabled = false });
+            PlotModel1.Series.Add(new LineSeries { LineStyle = LineStyle.Solid, Color = OxyColors.SpringGreen, MarkerType = MarkerType.Circle, MarkerSize = 5, MarkerStroke = OxyColors.Black,MarkerFill = OxyColors.Transparent,MarkerStrokeThickness = 4});
+            PlotModel1.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom,IsZoomEnabled = false, MajorGridlineStyle = LineStyle.Dot });
+            PlotModel1.Axes.Add(new LinearAxis { Position = AxisPosition.Left, IsZoomEnabled = false, MajorGridlineStyle = LineStyle.Dot });
             Run();
         }
         public async void Run()
@@ -37,14 +37,14 @@ namespace OxyPlotTest.ViewModels
             {
                 var s = (LineSeries)PlotModel1.Series[0];
                 double x = s.Points.Count > 0 ? s.Points[s.Points.Count - 1].X + 1 : 0;
-                if (s.Points.Count >= 100)
+                if (s.Points.Count >= 10)
                 {
                     s.Points.RemoveAt(0);
                 }
 
                 s.Points.Add(new DataPoint(x, rdy.Next(100)));
                 PlotModel1.InvalidatePlot(true);
-                await Task.Delay(100);
+                await Task.Delay(500);
             }
         }
     }
