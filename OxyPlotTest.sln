@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OxyPlotTest", "OxyPlotTest\OxyPlotTest.csproj", "{27271459-F80F-460B-9E8B-36896E07CE95}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{A6EADFB7-94F3-4463-9192-EE64AC2126BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,11 +17,16 @@ Global
 		{27271459-F80F-460B-9E8B-36896E07CE95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27271459-F80F-460B-9E8B-36896E07CE95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27271459-F80F-460B-9E8B-36896E07CE95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6EADFB7-94F3-4463-9192-EE64AC2126BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6EADFB7-94F3-4463-9192-EE64AC2126BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6EADFB7-94F3-4463-9192-EE64AC2126BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6EADFB7-94F3-4463-9192-EE64AC2126BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
 		SolutionGuid = {0D527CD3-50F1-48AD-8C3E-B8BBB62BA4DE}
 	EndGlobalSection
 EndGlobal
